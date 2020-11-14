@@ -8,7 +8,9 @@ namespace TenerifeApp
         {
             Console.WriteLine("Qué vuelta, mosquets.");
             var numSolution = new NumericSolution();
-            int a = 12345;
+            int a = 5;
+            Console.WriteLine(numSolution.FrontBackNumbers1(a));
+            a = 56;
             Console.WriteLine(numSolution.FrontBackNumbers1(a));
             Console.ReadLine();
         }

@@ -6,6 +6,7 @@ namespace TenerifeApp
 {
     public class NumericSolution
     {
+        #region "Exercise 1"
         public int FrontBackNumbers1(int A) 
         {
             string number = A.ToString();
@@ -48,6 +49,6 @@ namespace TenerifeApp
 
             return int.Parse(result);
         }
-
+        #endregion
     }
 }
