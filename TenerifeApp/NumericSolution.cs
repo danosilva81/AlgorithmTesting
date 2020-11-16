@@ -49,6 +49,23 @@ namespace TenerifeApp
 
             return int.Parse(result);
         }
+
+        #region Solucion del Flaco
+        public int GetFirstLastDigitAlternatively(int n)
+        {
+            return Int32.Parse(GetFirstLastDigit(n.ToString(), true));
+        }
+
+        private string GetFirstLastDigit(string s, bool fromStart)
+        {
+            if (s.Length == 1) return s;
+
+            return (fromStart)
+                ? s[0] + GetFirstLastDigit(s.Substring(1), !fromStart)
+                : s[s.Length - 1] + GetFirstLastDigit(s.Substring(0, s.Length - 1), !fromStart);
+        }
+        #endregion
+
         #endregion
     }
 }
