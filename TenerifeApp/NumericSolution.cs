@@ -34,9 +34,9 @@ namespace TenerifeApp
 
             while (A != 0) 
             {
-                int r1 = A / Convert.ToInt32(Math.Pow(10,lengthNum));
+                int r1 = A / (int)Math.Pow(10,lengthNum);
                 result += r1;
-                A %= Convert.ToInt32(Math.Pow(10, lengthNum));
+                A %= (int)Math.Pow(10, lengthNum);
                 lengthNum-=2;
 
                 if (A == 0)
@@ -48,6 +48,19 @@ namespace TenerifeApp
             }
 
             return int.Parse(result);
+        }
+
+        public int FrontBackNumerRecursive(int A) 
+        {
+            var lengthNum = A.ToString().Length;
+            
+            if (lengthNum == 1 || lengthNum == 2)
+                return A;
+
+            int r1 = A / (int)Math.Pow(10, lengthNum-1);
+            int r2 = A % 10;
+
+            return int.Parse(r1.ToString() + r2.ToString() + FrontBackNumerRecursive(A % (int)Math.Pow(10, lengthNum-1) / 10).ToString());
         }
 
         #region Solucion del Flaco

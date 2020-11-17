@@ -48,5 +48,29 @@ namespace TenerifeApp.Test
             var result = numTest.FrontBackNumbers2(1234);
             Assert.AreEqual(1423, result);
         }
+
+        [Test]
+        public void Test_FrontBackNumerRecursive_1()
+        {
+            var numTest = new NumericSolution();
+            var result = numTest.FrontBackNumerRecursive(123456);
+            Assert.AreEqual(162534, result);
+        }
+
+        [Test]
+        public void Test_FrontBackNumerRecursive_2()
+        {
+            var numTest = new NumericSolution();
+            var result = numTest.FrontBackNumerRecursive(1234567890);
+            Assert.AreEqual(1029384756, result);
+        }
+
+        [Test]
+        public void Test_FrontBackNumerRecursive_3()
+        {
+            var numTest = new NumericSolution();
+            var result = numTest.FrontBackNumerRecursive(123456789);
+            Assert.AreEqual(192837465, result);
+        }
     }
 }
