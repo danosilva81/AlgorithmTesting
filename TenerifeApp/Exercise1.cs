@@ -4,10 +4,9 @@ using System.Text;
 
 namespace TenerifeApp
 {
-    public class NumericSolution
+    public class Exercise1
     {
-        #region "Exercise 1"
-        public int FrontBackNumbers1(int A) 
+        public int FrontBackNumbers_Solution1(int A) 
         {
             string number = A.ToString();
             string result = "";
@@ -27,7 +26,7 @@ namespace TenerifeApp
             return int.Parse(result);
         }
 
-        public int FrontBackNumbers2(int A) 
+        public int FrontBackNumbers_Solution2(int A) 
         {
             var lengthNum = A.ToString().Length-1;
             var result = "";
@@ -50,7 +49,7 @@ namespace TenerifeApp
             return int.Parse(result);
         }
 
-        public int FrontBackNumerRecursive(int A) 
+        public int FrontBackNumbers_Recursive(int A) 
         {
             var lengthNum = A.ToString().Length;
             
@@ -60,7 +59,7 @@ namespace TenerifeApp
             int r1 = A / (int)Math.Pow(10, lengthNum-1);
             int r2 = A % 10;
 
-            return int.Parse(r1.ToString() + r2.ToString() + FrontBackNumerRecursive(A % (int)Math.Pow(10, lengthNum-1) / 10).ToString());
+            return int.Parse(r1.ToString() + r2.ToString() + FrontBackNumbers_Recursive(A % (int)Math.Pow(10, lengthNum-1) / 10).ToString());
         }
 
         #region Solucion del Flaco
@@ -77,8 +76,6 @@ namespace TenerifeApp
                 ? s[0] + GetFirstLastDigit(s.Substring(1), !fromStart)
                 : s[s.Length - 1] + GetFirstLastDigit(s.Substring(0, s.Length - 1), !fromStart);
         }
-        #endregion
-
         #endregion
     }
 }
